@@ -15,9 +15,11 @@
   >
     <auth-sidebar :auth="isAuthenticated()"></auth-sidebar>
 
-    <router-view v-slot="slotProps">
+    <router-view v-slot="slotProps" >
       <transition name="route" appear>
-        <component :is="slotProps.Component"></component>
+        <div :key="slotProps.route.name" class="app--wrapper">
+          <component :is="slotProps.Component"></component>
+        </div>
       </transition>
     </router-view>
   </div>
@@ -59,6 +61,7 @@ export default defineComponent({
 </script>
 
 <style scoped>
+
 
 
 .auth--dashboard--wrapper {

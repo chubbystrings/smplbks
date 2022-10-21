@@ -107,12 +107,6 @@ export default defineComponent({
 
     const pages = computed(() => {
       const range = [];
-      console.log(
-        Math.min(
-          startPage.value + props.maxVisibleButtons - 1,
-          props.totalPages
-        ) + " start value"
-      );
       for (
         let i = 1;
         i <=
@@ -127,7 +121,7 @@ export default defineComponent({
           isDisabled: i === props.currentPage,
         });
       }
-      console.log(range);
+      
       return range;
     });
 

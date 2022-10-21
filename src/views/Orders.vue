@@ -28,11 +28,9 @@ export default defineComponent({
     const url = ref(`/v1/order_items?limit=10`)
 
     const loadData = async (url: string) => {
-      console.log(url)
       isLoading.value = true;
       try {
         const data = await read(url);
-        console.log(data);
 
         const header = ["N/O", "Product ID", "Price", "Category", "Date"];
         tableDetails.value = {
@@ -43,15 +41,12 @@ export default defineComponent({
         offset.value = data.data.offset
         isLoading.value = false;
       } catch (error) {
-        console.log(error);
         isLoading.value = false;
       }
     };
 
 
     const handlePageChange = (page: any) => {
-      console.log('Main handler ' + (page - 1))
-      console.log(`${url.value}&offset=${(page - 1) * perPage.value}`)
       const newUrl = `${url.value}&offset=${(page - 1) * perPage.value}`
       loadData(newUrl)
     }

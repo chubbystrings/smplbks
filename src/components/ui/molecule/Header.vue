@@ -84,7 +84,7 @@ export default defineComponent({
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  left: 20px;
+  left: 50px;
   display: flex;
   gap: 5px;
   align-items: center;

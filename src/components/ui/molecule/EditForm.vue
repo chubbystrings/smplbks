@@ -77,9 +77,9 @@ export default defineComponent({
           freight_value: freight_value.value,
           shipping_limit_date: new Date(shipping_date.value),
         });
-        console.log(res)
+        
       } catch (error) {
-        console.log(error);
+        
       }
       isLoading.value = false;
       emit("action:edit");

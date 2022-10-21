@@ -81,9 +81,6 @@ export default defineComponent({
       router.replace({ name: "Login" });
     };
 
-    onMounted(() => {
-      console.log(props.auth);
-    });
 
     return { menuIsOpen, handleClick, currentSingleRoute, handleLogout };
   },

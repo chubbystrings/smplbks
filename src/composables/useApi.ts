@@ -30,10 +30,8 @@ const useAPI = () => {
 
   const create = async (url: string, payload: Record<string, any>) => {
     if (url.includes("login")) {
-      console.log('reached here')
       try {
         const res = await axiosInstance.post(url, payload);
-        console.log(res);
       } catch (error: any) {
         throw new Error(error)
       }

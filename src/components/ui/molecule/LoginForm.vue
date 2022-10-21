@@ -57,8 +57,7 @@ export default defineComponent({
         setLoggedInUser(user);
         router.replace({ name: "Orders" });
       } catch (error: any) {
-        console.log("error here");
-        console.log(error.message);
+
         authError.value = error.message.includes("401")
           ? "check your credentials"
           : "server error";
@@ -83,6 +82,7 @@ export default defineComponent({
   flex-direction: column;
   gap: 40px;
   position: relative;
+  margin-top: 100px;
 }
 
 .error {

@@ -103,7 +103,6 @@ export default defineComponent({
     const handleCheckbox = () => {};
 
     const onPageChange = (page: any) => {
-      console.log(page);
       currentPage.value = page
       emit('page:changed', page)
     };

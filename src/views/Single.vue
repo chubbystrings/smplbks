@@ -11,6 +11,8 @@
           <p>Freight value: {{ singleOrderDetails?.freight_value }}</p>
           <p>Shipping: {{ formatDate(singleOrderDetails?.shipping_limit_date, 'slash') }}</p>
           <p>Order Item ID: {{ singleOrderDetails?.order_item_id }}</p>
+          <p>Order ID: {{ singleOrderDetails?.order_id }}</p>
+          <p>Seller ID : {{ singleOrderDetails?.seller_id }} </p>
           <div class="action--wrapper">
             <button
               class="btn"
@@ -50,7 +52,7 @@
 </template>
 <script lang="ts">
 import { defineComponent, onMounted, ref, computed } from "vue";
-import { useRoute } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 import DashboardTemplate from "@/components/template/DashboardTemplate.vue";
 import Skeletal from "../components/ui/molecule/SkeletalLoader.vue";
 import { useStore } from "@/store";
@@ -76,6 +78,7 @@ export default defineComponent({
     });
     const store = useStore();
     const route = useRoute();
+    const router = useRouter()
     const singleOrderDetails = ref<Record<string, any>>({});
     const isLoading = ref(true);
     const EditProps = computed(() => {
@@ -110,8 +113,8 @@ export default defineComponent({
     };
 
     const handleAction = () => {
-      console.log(orderId.value);
       handleClose();
+      router.replace({name: 'Orders'})
     };
 
     const handleEditAction = () => {
@@ -126,7 +129,6 @@ export default defineComponent({
           const id = route.params?.id;
           const url = `/v1/order_items/${id}`;
           const data = await read(url);
-          console.log(data);
           singleOrderDetails.value = {
             ...data.data,
           };
