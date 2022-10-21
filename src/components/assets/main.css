@@ -1,0 +1,80 @@
+:root {
+    --primary: #031434;
+    --secondary: #febf12;
+    --accent: #f3f0e8;
+    --border: #0a74dc;
+    --text: #c1d1e8;
+    --button: #031434;
+    --heading: #ffffff;
+    --input: #182c47;
+    --disabled: #b1abab;
+  }
+  
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+ 
+  label,
+  p,
+  small,
+  div,
+  a,
+  input,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
+  }
+  a {
+    text-decoration: none;
+  }
+  a:hover {
+    color: var(--text);
+  }
+  
+  button:hover {
+    filter: brightness(70%);
+    cursor: pointer;
+  }
+  .btn {
+    
+    padding: 0;
+    overflow: hidden;
+    border-width: 0;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--button);
+    color: #ecf0f1;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .btn:disabled {
+    cursor: not-allowed;
+    background-color: var(--disabled);
+    border: none;
+    outline: none;
+    filter: brightness(70%);
+  }
+
+  .deleteBtn {
+    background-color: red;
+  }
+  
+  @media screen and (max-width: 445px) {
+      .btn {
+          width: 70px;
+          font-size: 12px;
+      }
+  }
+  
