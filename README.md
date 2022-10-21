@@ -1,4 +1,4 @@
-# enyata-starwars
+# smplbks project
 
 ## Project setup
 ```
